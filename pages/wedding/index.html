@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geonhwi &amp; Eri｜Wedding Invitation</title>
+<meta name="description" content="ゴヌィ＆エリ 結婚式のご案内。2026年11月9日。">
+<meta property="og:title" content="Geonhwi & Eri | Wedding Invitation">
+<meta property="og:description" content="2026.11.09 わたしたちの結婚式にご招待します。">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho+B1:wght@400;500;600&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rose:#e6c7c4;
+  --paper:#f7efe9;
+  --terracotta:#b4695c;
+  --crimson:#8c2f30;
+  --ink:#4a3a38;
+  --ink-soft:#7d6764;
+
+  --serif:"Cormorant Garamond",serif;
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  --myeongjo:"Nanum Myeongjo","Shippori Mincho B1",serif;
+
+  --pad:clamp(20px,5vw,56px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--mincho);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.9;
+  letter-spacing:.06em;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* 文節ごとに折り返す（画面幅に合わせて改行位置が自動で決まる） */
+.wrap span{display:inline-block}
+
+/* ================= view switching ================= */
+.view{display:none;position:relative;z-index:1}
+.view.is-active{display:block;animation:viewIn .5s ease both}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  min-height:100svh;
+  background:var(--rose);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.hero__inner{
+  flex:1;
+  padding:clamp(22px,5vw,56px) var(--pad) 0;
+  display:flex;flex-direction:column;
+  position:relative;z-index:2;
+}
+.arch{width:100%;max-width:800px;margin:0 auto;overflow:visible}
+.arch text{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:1.5px;
+  fill:var(--terracotta);
+}
+.arch .w1{font-size:108px}
+.arch .w2{font-size:92px}
+.hero__meta{
+  margin-top:clamp(6px,2vw,20px);
+  margin-left:auto;
+  text-align:right;
+  padding-right:clamp(0px,4vw,40px);
+  color:var(--terracotta);
+}
+.hero__names{
+  font-family:var(--serif);
+  font-size:clamp(30px,7.4vw,54px);
+  font-weight:400;
+  letter-spacing:.16em;
+  margin-right:-.16em;
+  line-height:1.25;
+}
+.hero__date{
+  font-family:var(--serif);
+  font-size:clamp(21px,5vw,34px);
+  letter-spacing:.14em;
+  margin-right:-.14em;
+  margin-top:clamp(12px,3.5vw,28px);
+}
+.hero__scroll{
+  margin:auto auto clamp(14px,3vw,26px);
+  text-align:center;
+  font-family:var(--serif);font-size:11px;letter-spacing:.34em;
+  color:var(--terracotta);opacity:.9;
+}
+.hero__scroll::after{
+  content:"";display:block;width:1px;height:24px;margin:6px auto 0;
+  background:var(--terracotta);
+  animation:drop 2.2s ease-in-out infinite;transform-origin:top;
+}
+@keyframes drop{0%,100%{transform:scaleY(.3);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+.hero__photos{
+  position:relative;z-index:1;
+  height:min(50vh,430px);
+}
+.hero__photos img{
+  position:absolute;bottom:0;
+  height:100%;width:auto;max-width:46vw;
+  object-fit:contain;object-position:bottom;
+}
+.hero__photos .bride{left:-4%}
+.hero__photos .groom{right:-2%}
+
+/* ================= TILE GRID ================= */
+.grid-wrap{padding:clamp(40px,9vw,96px) var(--pad) clamp(56px,10vw,110px)}
+.grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-flow:row dense;
+  gap:clamp(10px,1.6vw,18px);
+}
+.tile{
+  position:relative;
+  background:var(--paper);
+  border:1px solid rgba(140,47,48,.18);
+  aspect-ratio:1/1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1px;
+  text-decoration:none;color:var(--crimson);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),background .35s;
+}
+.tile::before{
+  content:"";position:absolute;inset:9px;
+  border:1.5px dashed rgba(140,47,48,.45);
+  pointer-events:none;
+}
+.tile:hover,.tile:focus-visible{transform:translateY(-5px);background:#fdf8f4}
+.tile:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.tile svg{width:clamp(46px,9vw,76px);height:auto;margin-bottom:12px}
+.tile__en{font-family:var(--serif);font-size:clamp(16px,2.5vw,25px);letter-spacing:.05em;line-height:1.15;text-align:center}
+.tile__ja{font-size:clamp(9px,1.5vw,12px);letter-spacing:.14em;color:var(--terracotta);margin-top:5px}
+.tile__ko{font-family:var(--myeongjo);font-size:clamp(8.5px,1.4vw,11px);letter-spacing:.08em;color:var(--terracotta);opacity:.85}
+
+.tile--title{
+  grid-column:1/-1;
+  aspect-ratio:auto;
+  border:none;background:transparent;cursor:default;
+  padding:clamp(28px,5vw,44px) 10px;
+}
+.tile--title::before{display:none}
+.tile--title:hover{transform:none;background:transparent}
+.tile--title .script{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  color:var(--crimson);
+  font-size:clamp(30px,6vw,54px);
+  line-height:1.05;letter-spacing:.01em;text-align:center;
+}
+.tile--title .script .small{display:block;font-size:.52em;margin:.1em 0}
+.tile--title .pair{
+  font-family:var(--serif);font-size:clamp(16px,2.6vw,25px);
+  letter-spacing:.1em;margin-top:.6em;color:var(--crimson)
+}
+.tile--title .day{
+  font-family:var(--serif);font-size:clamp(9px,1.5vw,12px);
+  letter-spacing:.22em;color:var(--terracotta);margin-top:.6em
+}
+
+.note-wrap{text-align:center;margin-top:clamp(40px,7vw,64px)}
+.note-wrap .n-ja{font-size:13.5px;letter-spacing:.1em;color:var(--ink-soft)}
+.note-wrap .n-ko{font-family:var(--myeongjo);font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);margin-top:8px;line-height:1.8}
+
+.btn{
+  display:inline-block;
+  font-family:var(--serif);font-size:15px;letter-spacing:.24em;
+  color:var(--paper);background:var(--crimson);
+  padding:16px 44px;text-decoration:none;
+  border:1px solid var(--crimson);
+  transition:background .3s,color .3s;
+}
+.btn:hover,.btn:focus-visible{background:transparent;color:var(--crimson)}
+
+/* ================= DETAIL PAGES ================= */
+.page{
+  min-height:100svh;
+  padding:clamp(28px,6vw,60px) var(--pad) clamp(70px,12vw,130px);
+  max-width:760px;margin:0 auto;
+}
+.back{
+  display:inline-block;font-family:var(--serif);font-size:12px;
+  letter-spacing:.26em;color:var(--terracotta);text-decoration:none;
+  padding:6px 2px;
+}
+.back:hover{color:var(--crimson)}
+.page__head{text-align:center;margin:clamp(30px,7vw,60px) 0 clamp(30px,6vw,52px)}
+.page__head svg{width:64px;height:auto;margin:0 auto 16px;color:var(--crimson)}
+.page__en{
+  font-family:var(--serif);font-size:clamp(30px,7vw,46px);
+  color:var(--crimson);letter-spacing:.04em;line-height:1.1;
+}
+.page__ja{font-size:11.5px;letter-spacing:.26em;color:var(--terracotta);margin-top:12px}
+.page__ko{font-family:var(--myeongjo);font-size:11px;letter-spacing:.1em;color:var(--terracotta);opacity:.85;margin-top:3px}
+.rule{width:34px;height:1px;background:var(--terracotta);margin:22px auto 0;opacity:.6}
+
+.lead{font-size:15px;line-height:2.3;text-align:center}
+.lead + .lead{margin-top:1.6em}
+.sign{
+  font-family:var(--serif);font-size:22px;letter-spacing:.1em;
+  text-align:center;margin-top:2.4em;color:var(--crimson)
+}
+.sign small{display:block;font-family:var(--mincho);font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-bottom:.7em}
+.small-note{max-width:460px;margin:40px auto 0;text-align:center;font-size:13px;color:var(--ink-soft);line-height:2.1}
+
+.time-list{list-style:none;max-width:440px;margin:0 auto}
+.time-list li{
+  display:grid;grid-template-columns:88px 1fr;gap:18px;align-items:baseline;
+  padding:20px 0;border-bottom:1px dashed rgba(140,47,48,.3);
+}
+.time-list li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.time-list .t{font-family:var(--serif);font-size:24px;color:var(--crimson);letter-spacing:.05em}
+.time-list .n{font-size:14px}
+.time-list .n small{display:block;font-size:11px;color:var(--ink-soft);letter-spacing:.1em;margin-top:4px}
+
+.program{list-style:none;max-width:470px;margin:0 auto;counter-reset:p}
+.program li{
+  display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:baseline;
+  padding:18px 0;border-bottom:1px dashed rgba(140,47,48,.3);
+}
+.program li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.program li::before{
+  counter-increment:p;content:counter(p,decimal-leading-zero);
+  font-family:var(--serif);font-size:17px;color:var(--terracotta);letter-spacing:.08em;
+}
+.program .n{font-size:15px}
+.program .n small{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:.06em;margin-top:5px;line-height:1.9}
+
+.menu-list{list-style:none;max-width:460px;margin:0 auto;text-align:center}
+.menu-list li{padding:22px 0;border-bottom:1px dashed rgba(140,47,48,.3)}
+.menu-list li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.menu-list .c{font-family:var(--serif);font-size:12px;letter-spacing:.3em;color:var(--terracotta)}
+.menu-list .d{font-size:14px;margin-top:8px}
+
+.info{max-width:460px;margin:0 auto;text-align:center}
+.info .venue{font-family:var(--serif);font-size:26px;color:var(--crimson);letter-spacing:.06em}
+.info .venue-ja{font-size:13px;margin-top:6px}
+.info .addr{font-size:13px;color:var(--ink-soft);margin-top:16px;line-height:2}
+.map{
+  margin:30px auto 0;max-width:560px;aspect-ratio:4/3;
+  border:1px solid rgba(140,47,48,.2);
+}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.25) sepia(.12)}
+.route{max-width:460px;margin:34px auto 0}
+.route dt{font-family:var(--serif);font-size:12px;letter-spacing:.24em;color:var(--terracotta);margin-top:22px}
+.route dd{font-size:13.5px;margin-top:6px}
+
+.photo-cta{text-align:center;margin-top:40px}
+
+.foot{
+  background:var(--rose);
+  padding:44px var(--pad);
+  text-align:center;position:relative;z-index:1;
+}
+.foot .f-name{font-family:var(--serif);font-size:20px;letter-spacing:.18em;color:var(--crimson)}
+.foot .f-date{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--terracotta);margin-top:8px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:640px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero__photos{height:min(44vh,275px)}
+  .hero__photos .bride{max-width:58vw}
+  .hero__photos .groom{max-width:48vw}
+  .time-list li{grid-template-columns:74px 1fr;gap:12px}
+  .program li{grid-template-columns:36px 1fr;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP
+============================================================ -->
+<main class="view is-active" data-view="top">
+
+  <header class="hero">
+    <div class="hero__inner">
+      <svg class="arch" viewBox="80 100 850 390" aria-label="Wedding Invitation">
+        <defs>
+          <path id="arcA" d="M 105 344 C 262 344 418 280 575 150" fill="none"/>
+          <path id="arcB" d="M 359 487 C 539 353 719 306 899 348" fill="none"/>
+        </defs>
+        <text class="w1"><textPath href="#arcA" startOffset="0">WEDDING</textPath></text>
+        <text class="w2"><textPath href="#arcB" startOffset="22">INVITATION</textPath></text>
+      </svg>
+
+      <div class="hero__meta">
+        <p class="hero__names">GEONHWI<br>&amp; ERI</p>
+        <p class="hero__date">2026.11.09</p>
+      </div>
+
+      <span class="hero__scroll">SCROLL</span>
+    </div>
+
+    <div class="hero__photos">
+      <img class="bride" src="photo-bride.png" alt="" onerror="this.style.display='none'">
+      <img class="groom" src="photo-groom.png" alt="" onerror="this.style.display='none'">
+    </div>
+  </header>
+
+  <section class="grid-wrap">
+    <div class="grid">
+
+      <a class="tile rv" href="#/greetings">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g transform="rotate(-9 40 55)">
+            <path d="M31 26 L35 50 Q40 56 45 50 L49 26 Z"/>
+            <path d="M40 56 V72"/><path d="M32 74 Q40 70 48 74"/>
+            <path d="M40 60 q-7-5-9 0 q-1 4 9 2 q10 2 9-2 q-2-5-9 0Z"/>
+          </g>
+          <g transform="rotate(9 62 55)">
+            <path d="M53 26 L57 50 Q62 56 67 50 L71 26 Z"/>
+            <path d="M62 56 V72"/><path d="M54 74 Q62 70 70 74"/>
+            <path d="M62 60 q-7-5-9 0 q-1 4 9 2 q10 2 9-2 q-2-5-9 0Z"/>
+          </g>
+          <path d="M74 20 v9 M69.5 24.5 h9"/>
+          <path d="M27 16 v6 M24 19 h6"/>
+        </svg>
+        <span class="tile__en">Greetings</span>
+        <span class="tile__ja">ご挨拶</span>
+        <span class="tile__ko">인사</span>
+      </a>
+
+      <a class="tile rv" href="#/access">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 36 L34 28 L56 36 L78 26 L88 33 L88 71 L78 78 L56 68 L34 76 L12 68 Z"/>
+          <path d="M34 28 V76"/><path d="M56 36 V68"/><path d="M78 26 V78"/>
+          <path d="M12 54 C26 48 30 62 44 58 C56 55 58 45 70 45 C80 45 82 53 88 51"/>
+          <path d="M45 31 C48 42 42 52 44 64"/>
+          <path d="M66 60 a4 4 0 1 0 .1 0 Z"/>
+        </svg>
+        <span class="tile__en">Access</span>
+        <span class="tile__ja">アクセス</span>
+        <span class="tile__ko">오시는 길</span>
+      </a>
+
+      <div class="tile tile--title rv">
+        <p class="script">Welcome<span class="small">to our</span>Wedding</p>
+        <p class="pair">Geonhwi &amp; Eri</p>
+        <p class="day">MON. 9TH NOVEMBER 2026</p>
+      </div>
+
+      <a class="tile rv" href="#/schedule">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="50" cy="52" r="31"/>
+          <circle cx="50" cy="52" r="26"/>
+          <path d="M50 28 v5 M50 76 v-5 M74 52 h-5 M26 52 h5"/>
+          <path d="M50 52 V34"/>
+          <path d="M50 52 L62 59"/>
+          <circle cx="50" cy="52" r="1.8" fill="currentColor" stroke="none"/>
+          <path d="M44 16 h12 M50 16 v5"/>
+        </svg>
+        <span class="tile__en">Schedule</span>
+        <span class="tile__ja">スケジュール</span>
+        <span class="tile__ko">일정 안내</span>
+      </a>
+
+      <a class="tile rv" href="#/ceremony">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 30 C30 23 70 23 90 30"/>
+          <path d="M14 37 C31 31 69 31 86 37"/>
+          <path d="M22 50 h56"/>
+          <path d="M50 37 v13"/>
+          <path d="M28 37 L25 84"/>
+          <path d="M72 37 L75 84"/>
+          <path d="M19 84 h12 M69 84 h12"/>
+        </svg>
+        <span class="tile__en">Ceremony<br>Program</span>
+        <span class="tile__ja">式次第</span>
+        <span class="tile__ko">신전식 순서</span>
+      </a>
+
+      <a class="tile rv" href="#/menu">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 42 h8 l-1 -10 h-6 Z"/>
+          <circle cx="50" cy="24" r="4"/><circle cx="42" cy="28" r="3.4"/><circle cx="58" cy="28" r="3.4"/>
+          <path d="M50 28 v4 M44 30 l4 3 M56 30 l-4 3"/>
+          <ellipse cx="50" cy="46" rx="30" ry="6"/>
+          <path d="M20 46 L15 78 Q50 86 85 78 L80 46"/>
+          <path d="M22 60 v14 M30 62 v14 M38 63 v14 M46 64 v14 M54 64 v14 M62 63 v14 M70 62 v14 M78 60 v14"/>
+          <ellipse cx="33" cy="46" rx="6" ry="2"/><ellipse cx="67" cy="46" rx="6" ry="2"/>
+          <path d="M24 43 v-4 M27 43 v-4 M73 43 v-4 M76 43 v-4"/>
+        </svg>
+        <span class="tile__en">Menu</span>
+        <span class="tile__ja">コース料理</span>
+        <span class="tile__ko">코스요리 안내</span>
+      </a>
+
+      <a class="tile rv" href="#/photo">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 36 h14 l6 -8 h24 l6 8 h14 v40 h-64 Z"/>
+          <circle cx="50" cy="56" r="14"/>
+          <circle cx="50" cy="56" r="8"/>
+          <circle cx="72" cy="43" r="2" fill="currentColor" stroke="none"/>
+          <path d="M22 30 h8"/>
+        </svg>
+        <span class="tile__en">Photo</span>
+        <span class="tile__ja">写真共有</span>
+        <span class="tile__ko">사진공유</span>
+      </a>
+
+    </div>
+
+    <div class="note-wrap rv">
+      <p class="n-ja wrap"><span>ご不明な点がございましたら、</span><span>お気軽にご連絡ください</span></p>
+      <p class="n-ko wrap"><span>궁금하신 점이 있으시면 </span><span>언제든지 편하게 문의해 주시기 바랍니다</span></p>
+    </div>
+  </section>
+
+  <footer class="foot">
+    <p class="f-name">GEONHWI &amp; ERI</p>
+    <p class="f-date">2026.11.09</p>
+  </footer>
+</main>
+
+<!-- ============================================================
+     GREETINGS
+============================================================ -->
+<main class="view" data-view="greetings">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Greetings</p>
+      <p class="page__ja">ご挨拶</p>
+      <p class="page__ko">인사</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap"><span>皆様におかれましては</span><span>益々ご清祥のこととお慶び申し上げます</span></p>
+    <p class="lead wrap"><span>このたび 私たちは</span><span>結婚式を挙げることとなりました</span></p>
+    <p class="lead wrap"><span>日頃お世話になっております皆様に</span><span>晴れの姿をお見せするとともに</span><span>ささやかな席を設けたく存じます</span></p>
+    <p class="lead wrap"><span>ご多用中 誠に恐縮ではございますが</span><span>ぜひご出席いただきたく</span><span>ご案内申し上げます</span></p>
+
+    <p class="sign"><small>2026年 9月吉日</small>Geonhwi &amp; Eri</p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     ACCESS
+============================================================ -->
+<main class="view" data-view="access">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Access</p>
+      <p class="page__ja">アクセス</p>
+      <p class="page__ko">오시는 길</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="info">
+      <p class="venue">VENUE NAME</p>
+      <p class="venue-ja">会場名（日本語）</p>
+      <p class="addr wrap"><span>〒000-0000</span><br><span>都道府県市区町村 1-2-3</span><br><span>TEL 00-0000-0000</span></p>
+    </div>
+
+    <!-- ▼ Googleマップの「地図を埋め込む」で取得したiframeのsrcに差し替えてください -->
+    <div class="map">
+      <iframe src="https://www.google.com/maps?q=%E6%9D%B1%E4%BA%AC%E9%A7%85&output=embed" loading="lazy" title="会場の地図"></iframe>
+    </div>
+
+    <dl class="route">
+      <dt>BY TRAIN</dt>
+      <dd>◯◯線 ◯◯駅 東口より徒歩5分</dd>
+      <dt>BY CAR</dt>
+      <dd>◯◯ICより約10分／駐車場100台（無料）</dd>
+      <dt>SHUTTLE BUS</dt>
+      <dd>◯◯駅より無料送迎バスあり（11:00 / 11:20 発）</dd>
+    </dl>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     SCHEDULE
+============================================================ -->
+<main class="view" data-view="schedule">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Schedule</p>
+      <p class="page__ja">スケジュール</p>
+      <p class="page__ko">일정 안내</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap" style="margin-bottom:38px"><span>2026年11月9日（月）</span><span>会場名をここに入れてください</span></p>
+
+    <ul class="time-list">
+      <li><span class="t">11:30</span><span class="n">挙式受付<small>神殿前ロビー</small></span></li>
+      <li><span class="t">12:00</span><span class="n">挙式<small>2階 神殿</small></span></li>
+      <li><span class="t">12:40</span><span class="n">集合写真・記念撮影</span></li>
+      <li><span class="t">13:00</span><span class="n">披露宴受付<small>3階 バンケット前</small></span></li>
+      <li><span class="t">13:30</span><span class="n">披露宴</span></li>
+      <li><span class="t">16:00</span><span class="n">お開き</span></li>
+    </ul>
+
+    <p class="small-note wrap"><span>※ 時間は変更になる場合がございます</span><span>最新のご案内はこのページでお知らせします</span></p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     CEREMONY PROGRAM
+============================================================ -->
+<main class="view" data-view="ceremony">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Ceremony<br>Program</p>
+      <p class="page__ja">式次第</p>
+      <p class="page__ko">신전식 순서</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap" style="margin-bottom:38px"><span>神前式の流れをご紹介します</span><span>はじめての方もどうぞご安心ください</span></p>
+
+    <ol class="program">
+      <li><span class="n">参進の儀<small>雅楽の調べにあわせ、神殿へと進みます</small></span></li>
+      <li><span class="n">修祓の儀<small>お祓いを受け、心身を清めます</small></span></li>
+      <li><span class="n">祝詞奏上<small>斎主が神様に結婚を奉告します</small></span></li>
+      <li><span class="n">三献の儀<small>三三九度の盃を交わします</small></span></li>
+      <li><span class="n">誓詞奏上<small>ふたりで誓いの言葉を読み上げます</small></span></li>
+      <li><span class="n">指輪の交換</span></li>
+      <li><span class="n">玉串奉奠<small>神前に玉串をお供えします</small></span></li>
+      <li><span class="n">親族盃の儀<small>ご親族で盃を交わし、縁を結びます</small></span></li>
+      <li><span class="n">斎主挨拶</span></li>
+    </ol>
+
+    <p class="small-note wrap"><span>所要時間は30分ほどです</span><span>お写真は式のあいだも自由にお撮りください</span></p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     MENU
+============================================================ -->
+<main class="view" data-view="menu">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Menu</p>
+      <p class="page__ja">コース料理</p>
+      <p class="page__ko">코스요리 안내</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead" style="margin-bottom:34px">当日お出しするお料理のご紹介です</p>
+
+    <ul class="menu-list">
+      <li><span class="c">AMUSE</span><span class="d">季節の一口オードブル</span></li>
+      <li><span class="c">HORS-D'OEUVRE</span><span class="d">魚介と旬野菜のテリーヌ</span></li>
+      <li><span class="c">SOUPE</span><span class="d">かぼちゃの冷製スープ</span></li>
+      <li><span class="c">POISSON</span><span class="d">真鯛のポワレ 白ワインソース</span></li>
+      <li><span class="c">VIANDE</span><span class="d">牛フィレ肉のロースト</span></li>
+      <li><span class="c">DESSERT</span><span class="d">ウエディングケーキ・小菓子</span></li>
+      <li><span class="c">CAFÉ</span><span class="d">コーヒー または 紅茶</span></li>
+    </ul>
+
+    <p class="small-note wrap"><span>アレルギー・苦手な食材のある方は</span><span>お早めにご連絡ください</span></p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     PHOTO
+============================================================ -->
+<main class="view" data-view="photo">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Photo</p>
+      <p class="page__ja">写真共有</p>
+      <p class="page__ko">사진공유</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap"><span>当日撮っていただいた写真を</span><span>みんなで共有できるアルバムです</span></p>
+    <p class="lead wrap"><span>お手元の写真をアップロードしていただくと</span><span>全員が見られるようになります</span></p>
+
+    <div class="photo-cta">
+      <!-- ▼ 共有アルバムのURLに差し替えてください（Googleフォト等の共有リンク） -->
+      <a class="btn" href="https://photos.app.goo.gl/xxxxxxxx" target="_blank" rel="noopener">ALBUM</a>
+    </div>
+
+    <p class="small-note wrap"><span>当日は会場にQRコードをご用意しています</span><span>式のあとの写真もこちらに追加していきます</span></p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<script>
+(function () {
+  var views = document.querySelectorAll('[data-view]');
+  var titles = {
+    top: 'Geonhwi & Eri｜Wedding Invitation',
+    greetings: 'ご挨拶｜Geonhwi & Eri',
+    access: 'アクセス｜Geonhwi & Eri',
+    schedule: 'スケジュール｜Geonhwi & Eri',
+    ceremony: '式次第｜Geonhwi & Eri',
+    menu: 'コース料理｜Geonhwi & Eri',
+    photo: '写真共有｜Geonhwi & Eri'
+  };
+
+  function route() {
+    var id = (location.hash.replace('#/', '') || 'top');
+    var found = false;
+    views.forEach(function (v) {
+      var on = v.dataset.view === id;
+      v.classList.toggle('is-active', on);
+      if (on) found = true;
+    });
+    if (!found) {
+      document.querySelector('[data-view="top"]').classList.add('is-active');
+      id = 'top';
+    }
+    document.title = titles[id] || titles.top;
+    window.scrollTo(0, 0);
+    reveal();
+  }
+
+  function reveal() {
+    var items = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, i) {
+        if (e.isIntersecting) {
+          setTimeout(function () { e.target.classList.add('in'); }, i * 70);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { if (!el.classList.contains('in')) io.observe(el); });
+  }
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
