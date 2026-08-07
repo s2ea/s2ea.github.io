@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geonhwi &amp; Eri｜Wedding Invitation</title>
+<meta name="description" content="ゴニ＆エリ 結婚式のご案内 2026年11月9日 ">
+<meta property="og:title" content="Geonhwi & Eri | Wedding Invitation">
+<meta property="og:description" content="2026.11.09 わたしたちの結婚式にご招待します ">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Shippori+Mincho+B1:wght@400;500;600&family=Nanum+Myeongjo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --rose:#e6c7c4;
+  --paper:#f7efe9;
+  --terracotta:#b4695c;
+  --crimson:#8c2f30;
+  --ink:#4a3a38;
+  --ink-soft:#7d6764;
+
+  --serif:"Cormorant Garamond",serif;
+  --mincho:"Shippori Mincho B1","Hiragino Mincho ProN",serif;
+  --myeongjo:"Nanum Myeongjo","Shippori Mincho B1",serif;
+
+  --pad:clamp(20px,5vw,56px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--mincho);
+  color:var(--ink);
+  background:var(--paper);
+  line-height:1.9;
+  letter-spacing:.06em;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+img{max-width:100%;display:block}
+a{color:inherit}
+
+/* 文節ごとに折り返す（画面幅に合わせて改行位置が自動で決まる） */
+.wrap span{display:inline-block}
+
+/* ================= view switching ================= */
+.view{display:none;position:relative;z-index:1}
+.view.is-active{display:block;animation:viewIn .5s ease both}
+@keyframes viewIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+
+/* ================= HERO ================= */
+.hero{
+  position:relative;
+  min-height:100svh;
+  background:var(--rose);
+  overflow:hidden;
+  display:flex;flex-direction:column;
+}
+.hero__inner{
+  flex:1;
+  padding:clamp(22px,5vw,56px) var(--pad) 0;
+  display:flex;flex-direction:column;
+  position:relative;z-index:2;
+}
+.arch{width:100%;max-width:800px;margin:0 auto;overflow:visible}
+.arch text{
+  font-family:var(--serif);
+  font-weight:400;
+  letter-spacing:1.5px;
+  fill:var(--terracotta);
+}
+.arch .w1{font-size:108px}
+.arch .w2{font-size:92px}
+.hero__meta{
+  margin-top:clamp(6px,2vw,20px);
+  margin-left:auto;
+  text-align:right;
+  padding-right:clamp(0px,4vw,40px);
+  color:var(--terracotta);
+}
+.hero__names{
+  font-family:var(--serif);
+  font-size:clamp(30px,7.4vw,54px);
+  font-weight:400;
+  letter-spacing:.16em;
+  margin-right:-.16em;
+  line-height:1.25;
+}
+.hero__date{
+  font-family:var(--serif);
+  font-size:clamp(21px,5vw,34px);
+  letter-spacing:.14em;
+  margin-right:-.14em;
+  margin-top:clamp(12px,3.5vw,28px);
+}
+.hero__scroll{
+  margin:auto auto clamp(14px,3vw,26px);
+  text-align:center;
+  font-family:var(--serif);font-size:11px;letter-spacing:.34em;
+  color:var(--terracotta);opacity:.9;
+}
+.hero__scroll::after{
+  content:"";display:block;width:1px;height:24px;margin:6px auto 0;
+  background:var(--terracotta);
+  animation:drop 2.2s ease-in-out infinite;transform-origin:top;
+}
+@keyframes drop{0%,100%{transform:scaleY(.3);opacity:.4}50%{transform:scaleY(1);opacity:1}}
+.hero__photos{
+  position:relative;z-index:1;
+  height:min(50vh,430px);
+}
+.hero__photos img{
+  position:absolute;bottom:0;
+  height:100%;width:auto;max-width:46vw;
+  object-fit:contain;object-position:bottom;
+}
+.hero__photos .bride{left:-4%}
+.hero__photos .groom{right:-2%}
+
+/* ================= TILE GRID ================= */
+.grid-wrap{padding:clamp(40px,9vw,96px) var(--pad) clamp(56px,10vw,110px)}
+.grid{
+  max-width:1000px;margin:0 auto;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-auto-flow:row dense;
+  gap:clamp(10px,1.6vw,18px);
+}
+.tile{
+  position:relative;
+  background:var(--paper);
+  border:1px solid rgba(140,47,48,.18);
+  aspect-ratio:1/1;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1px;
+  text-decoration:none;color:var(--crimson);
+  transition:transform .35s cubic-bezier(.2,.7,.3,1),background .35s;
+}
+.tile::before{
+  content:"";position:absolute;inset:9px;
+  border:1.5px dashed rgba(140,47,48,.45);
+  pointer-events:none;
+}
+.tile:hover,.tile:focus-visible{transform:translateY(-5px);background:#fdf8f4}
+.tile:focus-visible{outline:2px solid var(--crimson);outline-offset:3px}
+.tile svg{width:clamp(46px,9vw,76px);height:auto;margin-bottom:12px}
+.tile__en{font-family:var(--serif);font-size:clamp(16px,2.5vw,25px);letter-spacing:.05em;line-height:1.15;text-align:center}
+/* 英語が2行になるタイルだけ行間を詰め、増えた高さを上下に逃がす。
+   こうすると絵・日本語・韓国語の位置が他のタイルとそろう */
+.tile--stack .tile__en{line-height:1.05;margin-top:-.475em;margin-bottom:-.475em}
+/* 日本語だけ少し下げる。同じ量を下マージンで戻すので韓国語は動かない */
+.tile--stack .tile__ja{margin-top:calc(5px + .4em);margin-bottom:-.4em}
+.tile__ja{font-size:clamp(9px,1.5vw,12px);letter-spacing:.14em;color:var(--terracotta);margin-top:5px}
+.tile__ko{font-family:var(--myeongjo);font-size:clamp(8.5px,1.4vw,11px);letter-spacing:.08em;color:var(--terracotta);opacity:.85}
+
+.tile--title{
+  grid-column:1/-1;
+  aspect-ratio:auto;
+  border:none;background:transparent;cursor:default;
+  padding:clamp(28px,5vw,44px) 10px;
+}
+.tile--title::before{display:none}
+.tile--title:hover{transform:none;background:transparent}
+.tile--title .script{
+  font-family:var(--serif);font-style:italic;font-weight:400;
+  color:var(--crimson);
+  font-size:clamp(30px,6vw,54px);
+  line-height:1.05;letter-spacing:.01em;text-align:center;
+}
+.tile--title .script .small{display:block;font-size:.52em;margin:.1em 0}
+.tile--title .pair{
+  font-family:var(--serif);font-size:clamp(16px,2.6vw,25px);
+  letter-spacing:.1em;margin-top:.6em;color:var(--crimson)
+}
+.tile--title .day{
+  font-family:var(--serif);font-size:clamp(9px,1.5vw,12px);
+  letter-spacing:.22em;color:var(--terracotta);margin-top:.6em
+}
+
+.note-wrap{text-align:center;margin-top:clamp(40px,7vw,64px)}
+.note-wrap .n-ja{font-size:13.5px;letter-spacing:.1em;word-spacing:.5em;color:var(--ink-soft)}
+.note-wrap .n-ko{font-family:var(--myeongjo);font-size:12.5px;letter-spacing:.02em;color:var(--ink-soft);margin-top:8px;line-height:1.8}
+
+.btn{
+  display:inline-block;
+  font-family:var(--serif);font-size:15px;letter-spacing:.24em;
+  color:var(--paper);background:var(--crimson);
+  padding:16px 44px;text-decoration:none;
+  border:1px solid var(--crimson);
+  transition:background .3s,color .3s;
+}
+.btn:hover,.btn:focus-visible{background:transparent;color:var(--crimson)}
+
+/* ================= DETAIL PAGES ================= */
+.page{
+  min-height:100svh;
+  padding:clamp(28px,6vw,60px) var(--pad) clamp(70px,12vw,130px);
+  max-width:760px;margin:0 auto;
+}
+.back{
+  display:inline-block;font-family:var(--serif);font-size:12px;
+  letter-spacing:.26em;color:var(--terracotta);text-decoration:none;
+  padding:6px 2px;
+}
+.back:hover{color:var(--crimson)}
+.page__head{text-align:center;margin:clamp(30px,7vw,60px) 0 clamp(30px,6vw,52px)}
+.page__head svg{width:64px;height:auto;margin:0 auto 16px;color:var(--crimson)}
+.page__en{
+  font-family:var(--serif);font-size:clamp(30px,7vw,46px);
+  color:var(--crimson);letter-spacing:.04em;line-height:1.1;
+}
+.page__ja{font-size:11.5px;letter-spacing:.26em;color:var(--terracotta);margin-top:12px}
+.page__ko{font-family:var(--myeongjo);font-size:11px;letter-spacing:.1em;color:var(--terracotta);opacity:.85;margin-top:3px}
+.rule{width:34px;height:1px;background:var(--terracotta);margin:22px auto 0;opacity:.6}
+
+.lead{font-size:15px;line-height:2.3;text-align:center}
+.lead + .lead{margin-top:1.6em}
+.lead.ko{font-size:14px;line-height:2;letter-spacing:.02em}
+.lead-divider{width:40px;height:1px;background:var(--terracotta);opacity:.45;margin:2.6em auto}
+.sign{
+  font-family:var(--serif);font-size:22px;letter-spacing:.1em;
+  text-align:center;margin-top:2.4em;color:var(--crimson)
+}
+.sign small{display:block;font-family:var(--mincho);font-size:11px;letter-spacing:.2em;color:var(--ink-soft);margin-bottom:.7em}
+.small-note{max-width:460px;margin:40px auto 0;text-align:center;font-size:13px;color:var(--ink-soft);line-height:2.1}
+.small-note.ko{font-family:var(--myeongjo);font-size:12px;line-height:1.9;letter-spacing:.02em}
+
+.time-list{list-style:none;max-width:460px;margin:0 auto}
+.time-list li{
+  display:grid;grid-template-columns:78px 1fr;gap:18px;align-items:baseline;
+  padding:20px 0;border-bottom:1px dashed rgba(140,47,48,.3);
+}
+.time-list li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.time-list .t{font-family:var(--serif);font-size:23px;color:var(--crimson);letter-spacing:.02em}
+.time-list .n{font-size:14px}
+.time-list .n .ko{display:block;font-family:var(--myeongjo);font-size:12px;color:var(--ink-soft);letter-spacing:.02em;margin-top:3px}
+.time-list .n small{display:block;font-size:11px;color:var(--ink-soft);letter-spacing:.1em;margin-top:4px}
+.time-list .n small{font-family:var(--myeongjo)}
+
+.program{list-style:none;max-width:470px;margin:0 auto;counter-reset:p}
+.program li{
+  display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:baseline;
+  padding:18px 0;border-bottom:1px dashed rgba(140,47,48,.3);
+}
+.program li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.program li::before{
+  counter-increment:p;content:counter(p,decimal-leading-zero);
+  font-family:var(--serif);font-size:17px;color:var(--terracotta);letter-spacing:.08em;
+}
+.program .n{font-size:15px}
+.program .n small{display:block;font-size:12px;color:var(--ink-soft);letter-spacing:.06em;margin-top:5px;line-height:1.9}
+
+/* PDFリンクボタン */
+.pdf-link{
+  display:inline-flex;align-items:center;gap:10px;
+  font-family:var(--serif);font-size:14px;letter-spacing:.14em;
+  color:var(--crimson);text-decoration:none;
+  border:1px solid var(--crimson);border-radius:2px;
+  padding:14px 30px;transition:background .3s,color .3s;
+}
+.pdf-link:hover,.pdf-link:focus-visible{background:var(--crimson);color:var(--paper)}
+.pdf-link svg{width:18px;height:18px;flex:none}
+
+/* 式次第・韓国語セクション */
+.kdoc{max-width:560px;margin:0 auto;text-align:left}
+.kdoc .k-intro{font-family:var(--myeongjo);font-size:14px;line-height:2.05;color:var(--ink);letter-spacing:.01em}
+.kdoc .k-intro + .k-intro{margin-top:1.4em}
+.k-band{
+  font-family:var(--serif);font-size:12px;letter-spacing:.2em;color:var(--terracotta);
+  text-align:center;margin:clamp(38px,7vw,58px) 0 8px;
+}
+.k-band .kb-ko{display:block;font-family:var(--myeongjo);font-size:14px;letter-spacing:.04em;color:var(--crimson);margin-top:6px}
+.k-flow{
+  font-family:var(--myeongjo);font-size:13px;line-height:2.1;color:var(--ink-soft);
+  text-align:center;background:rgba(180,105,92,.06);
+  border:1px solid rgba(140,47,48,.16);border-radius:3px;
+  padding:20px 22px;margin-top:14px;
+}
+.kdoc details{border-bottom:1px dashed rgba(140,47,48,.3)}
+.kdoc details:first-of-type{border-top:1px dashed rgba(140,47,48,.3)}
+.kdoc summary{
+  cursor:pointer;list-style:none;padding:17px 26px 17px 4px;position:relative;
+  font-family:var(--myeongjo);font-size:14.5px;color:var(--crimson);letter-spacing:.02em;
+}
+.kdoc summary::-webkit-details-marker{display:none}
+.kdoc summary::after{
+  content:"";position:absolute;right:6px;top:24px;width:8px;height:8px;
+  border-right:1px solid var(--terracotta);border-bottom:1px solid var(--terracotta);
+  transform:rotate(45deg);transition:transform .3s;
+}
+.kdoc details[open] summary::after{transform:rotate(-135deg)}
+.kdoc .k-body{
+  font-family:var(--myeongjo);font-size:13px;line-height:2;color:var(--ink-soft);
+  letter-spacing:.01em;padding:0 4px 20px;
+}
+.kdoc .k-body p + p{margin-top:1em}
+.kdoc .k-note{font-size:12px;color:var(--terracotta)}
+
+.menu-list{list-style:none;max-width:480px;margin:0 auto;text-align:center}
+.menu-list li{padding:20px 0;border-bottom:1px dashed rgba(140,47,48,.3)}
+.menu-list li:first-child{border-top:1px dashed rgba(140,47,48,.3)}
+.menu-list .c{font-family:var(--serif);font-size:12px;letter-spacing:.28em;color:var(--terracotta)}
+.menu-list .d{font-size:14px;margin-top:8px}
+.menu-list .d .ko{display:block;font-family:var(--myeongjo);font-size:12.5px;color:var(--ink-soft);letter-spacing:.02em;margin-top:4px}
+
+.menu-sub{
+  font-family:var(--serif);font-size:14px;letter-spacing:.16em;color:var(--crimson);
+  text-align:center;margin:clamp(38px,7vw,54px) 0 6px;
+}
+.menu-sub .ko{display:block;font-family:var(--myeongjo);font-size:12.5px;color:var(--terracotta);letter-spacing:.03em;margin-top:5px}
+.drink-list{max-width:440px;margin:16px auto 0;text-align:center;font-size:13.5px;line-height:2}
+.drink-list .ko{display:block;font-family:var(--myeongjo);font-size:12.5px;color:var(--ink-soft);margin-top:6px}
+.allergy{
+  max-width:500px;margin:clamp(40px,7vw,56px) auto 0;
+  background:rgba(180,105,92,.06);border:1px solid rgba(140,47,48,.16);border-radius:3px;
+  padding:22px 24px;font-size:12.5px;line-height:2;color:var(--ink-soft);
+}
+.allergy .a-ja{letter-spacing:.02em}
+.allergy .a-ko{font-family:var(--myeongjo);letter-spacing:.02em;margin-top:14px;padding-top:14px;border-top:1px dashed rgba(140,47,48,.25)}
+.allergy b{display:block;color:var(--crimson);font-weight:400;font-family:var(--serif);letter-spacing:.14em;font-size:11px;margin-bottom:8px}
+.allergy .ko-inline{font-family:var(--myeongjo);color:var(--ink-soft)}
+
+.info{max-width:460px;margin:0 auto;text-align:center}
+.info .venue{font-family:var(--serif);font-size:26px;color:var(--crimson);letter-spacing:.06em}
+.info .venue-ja{font-size:13px;margin-top:6px}
+.info .addr{font-size:13px;color:var(--ink-soft);margin-top:16px;line-height:2}
+
+.venue-block{max-width:520px;margin:0 auto}
+.venue-block + .venue-block{margin-top:clamp(40px,7vw,60px)}
+.venue-block .v-label{font-family:var(--serif);font-size:12px;letter-spacing:.26em;color:var(--terracotta);text-align:center}
+.venue-block .v-label .ko{display:block;font-size:11px;letter-spacing:.08em;opacity:.85;margin-top:3px}
+.venue-block .v-name{font-family:var(--serif);font-size:clamp(24px,5vw,30px);color:var(--crimson);letter-spacing:.04em;text-align:center;margin-top:12px}
+.venue-block .v-name-ja{font-size:15px;text-align:center;margin-top:6px}
+.venue-block .v-name-ko{font-family:var(--myeongjo);font-size:13px;color:var(--ink-soft);text-align:center;margin-top:5px;letter-spacing:.02em}
+.venue-block .v-map-link{display:block;text-align:center;margin-top:14px;font-family:var(--serif);font-size:12px;letter-spacing:.18em;color:var(--terracotta);text-decoration:none}
+.venue-block .v-map-link:hover{color:var(--crimson)}
+.venue-block .map{margin-top:18px}
+.map{
+  margin:30px auto 0;max-width:560px;aspect-ratio:4/3;
+  border:1px solid rgba(140,47,48,.2);
+}
+.map iframe{width:100%;height:100%;border:0;display:block;filter:grayscale(.25) sepia(.12)}
+.route{max-width:460px;margin:34px auto 0}
+.route dt{font-family:var(--serif);font-size:12px;letter-spacing:.24em;color:var(--terracotta);margin-top:22px}
+.route dd{font-size:13.5px;margin-top:6px}
+
+.photo-cta{text-align:center;margin-top:40px}
+.prep{text-align:center;margin:clamp(48px,10vw,80px) auto 0}
+.prep-ja{font-family:var(--serif);font-size:clamp(26px,6vw,38px);letter-spacing:.3em;color:var(--crimson)}
+.prep-ko{font-family:var(--myeongjo);font-size:14px;letter-spacing:.1em;color:var(--terracotta);margin-top:12px}
+
+.foot{
+  background:var(--rose);
+  padding:44px var(--pad);
+  text-align:center;position:relative;z-index:1;
+}
+.foot .f-name{font-family:var(--serif);font-size:20px;letter-spacing:.18em;color:var(--crimson)}
+.foot .f-date{font-family:var(--serif);font-size:13px;letter-spacing:.2em;color:var(--terracotta);margin-top:8px}
+
+.rv{opacity:0;transform:translateY(16px);transition:opacity .8s ease,transform .8s ease}
+.rv.in{opacity:1;transform:none}
+
+@media(max-width:640px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .hero__photos{height:min(44vh,275px)}
+  .hero__photos .bride{max-width:58vw}
+  .hero__photos .groom{max-width:48vw}
+  .time-list li{grid-template-columns:74px 1fr;gap:12px}
+  .program li{grid-template-columns:36px 1fr;gap:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============================================================
+     TOP
+============================================================ -->
+<main class="view is-active" data-view="top">
+
+  <header class="hero">
+    <div class="hero__inner">
+      <svg class="arch" viewBox="80 100 850 390" aria-label="Wedding Invitation">
+        <defs>
+          <path id="arcA" d="M 105 344 C 262 344 418 280 575 150" fill="none"/>
+          <path id="arcB" d="M 359 487 C 539 353 719 306 899 348" fill="none"/>
+        </defs>
+        <text class="w1"><textPath href="#arcA" startOffset="0">WEDDING</textPath></text>
+        <text class="w2"><textPath href="#arcB" startOffset="22">INVITATION</textPath></text>
+      </svg>
+
+      <div class="hero__meta">
+        <p class="hero__names">GEONHWI<br>&amp; ERI</p>
+        <p class="hero__date">2026.11.09</p>
+      </div>
+
+      <span class="hero__scroll">SCROLL</span>
+    </div>
+
+    <div class="hero__photos">
+      <img class="bride" src="photo-bride.png" alt="" onerror="this.style.display='none'">
+      <img class="groom" src="photo-groom.png" alt="" onerror="this.style.display='none'">
+    </div>
+  </header>
+
+  <section class="grid-wrap">
+    <div class="grid">
+
+      <a class="tile rv" href="#/greetings">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g transform="rotate(-9 40 55)">
+            <path d="M31 26 L35 50 Q40 56 45 50 L49 26 Z"/>
+            <path d="M40 56 V72"/><path d="M32 74 Q40 70 48 74"/>
+            <path d="M40 60 q-7-5-9 0 q-1 4 9 2 q10 2 9-2 q-2-5-9 0Z"/>
+          </g>
+          <g transform="rotate(9 62 55)">
+            <path d="M53 26 L57 50 Q62 56 67 50 L71 26 Z"/>
+            <path d="M62 56 V72"/><path d="M54 74 Q62 70 70 74"/>
+            <path d="M62 60 q-7-5-9 0 q-1 4 9 2 q10 2 9-2 q-2-5-9 0Z"/>
+          </g>
+          <path d="M74 20 v9 M69.5 24.5 h9"/>
+          <path d="M27 16 v6 M24 19 h6"/>
+        </svg>
+        <span class="tile__en">Greetings</span>
+        <span class="tile__ja">ご挨拶</span>
+        <span class="tile__ko">인사</span>
+      </a>
+
+      <a class="tile rv" href="#/access">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 36 L34 28 L56 36 L78 26 L88 33 L88 71 L78 78 L56 68 L34 76 L12 68 Z"/>
+          <path d="M34 28 V76"/><path d="M56 36 V68"/><path d="M78 26 V78"/>
+          <path d="M12 54 C26 48 30 62 44 58 C56 55 58 45 70 45 C80 45 82 53 88 51"/>
+          <path d="M45 31 C48 42 42 52 44 64"/>
+          <path d="M66 60 a4 4 0 1 0 .1 0 Z"/>
+        </svg>
+        <span class="tile__en">Access</span>
+        <span class="tile__ja">アクセス</span>
+        <span class="tile__ko">오시는 길</span>
+      </a>
+
+      <div class="tile tile--title rv">
+        <p class="script">Welcome<span class="small">to our</span>Wedding</p>
+        <p class="pair">Geonhwi &amp; Eri</p>
+        <p class="day">MON. 9TH NOVEMBER 2026</p>
+      </div>
+
+      <a class="tile rv" href="#/schedule">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="50" cy="52" r="31"/>
+          <circle cx="50" cy="52" r="26"/>
+          <path d="M50 28 v5 M50 76 v-5 M74 52 h-5 M26 52 h5"/>
+          <path d="M50 52 V34"/>
+          <path d="M50 52 L62 59"/>
+          <circle cx="50" cy="52" r="1.8" fill="currentColor" stroke="none"/>
+          <path d="M44 16 h12 M50 16 v5"/>
+        </svg>
+        <span class="tile__en">Schedule</span>
+        <span class="tile__ja">スケジュール</span>
+        <span class="tile__ko">일정 안내</span>
+      </a>
+
+      <a class="tile tile--stack rv" href="#/ceremony">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 30 C30 23 70 23 90 30"/>
+          <path d="M14 37 C31 31 69 31 86 37"/>
+          <path d="M22 50 h56"/>
+          <path d="M50 37 v13"/>
+          <path d="M28 37 L25 84"/>
+          <path d="M72 37 L75 84"/>
+          <path d="M19 84 h12 M69 84 h12"/>
+        </svg>
+        <span class="tile__en">Ceremony<br>Program</span>
+        <span class="tile__ja">式次第</span>
+        <span class="tile__ko">신전식 순서</span>
+      </a>
+
+      <a class="tile rv" href="#/menu">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M46 42 h8 l-1 -10 h-6 Z"/>
+          <circle cx="50" cy="24" r="4"/><circle cx="42" cy="28" r="3.4"/><circle cx="58" cy="28" r="3.4"/>
+          <path d="M50 28 v4 M44 30 l4 3 M56 30 l-4 3"/>
+          <ellipse cx="50" cy="46" rx="30" ry="6"/>
+          <path d="M20 46 L15 78 Q50 86 85 78 L80 46"/>
+          <path d="M22 60 v14 M30 62 v14 M38 63 v14 M46 64 v14 M54 64 v14 M62 63 v14 M70 62 v14 M78 60 v14"/>
+          <ellipse cx="33" cy="46" rx="6" ry="2"/><ellipse cx="67" cy="46" rx="6" ry="2"/>
+          <path d="M24 43 v-4 M27 43 v-4 M73 43 v-4 M76 43 v-4"/>
+        </svg>
+        <span class="tile__en">Menu</span>
+        <span class="tile__ja">コース料理</span>
+        <span class="tile__ko">코스요리 안내</span>
+      </a>
+
+      <a class="tile rv" href="#/photo">
+        <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M18 36 h14 l6 -8 h24 l6 8 h14 v40 h-64 Z"/>
+          <circle cx="50" cy="56" r="14"/>
+          <circle cx="50" cy="56" r="8"/>
+          <circle cx="72" cy="43" r="2" fill="currentColor" stroke="none"/>
+          <path d="M22 30 h8"/>
+        </svg>
+        <span class="tile__en">Photo</span>
+        <span class="tile__ja">写真共有</span>
+        <span class="tile__ko">사진공유</span>
+      </a>
+
+    </div>
+
+  </section>
+
+  <footer class="foot">
+    <p class="f-name">GEONHWI &amp; ERI</p>
+    <p class="f-date">2026.11.09</p>
+  </footer>
+</main>
+
+<!-- ============================================================
+     GREETINGS
+============================================================ -->
+<main class="view" data-view="greetings">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Greetings</p>
+      <p class="page__ja">ご挨拶</p>
+      <p class="page__ko">인사</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap"><span>皆様におかれましては</span><span>益々ご清祥のこととお慶び申し上げます</span></p>
+    <p class="lead wrap"><span>このたび 私たちは</span><span>結婚式を挙げることとなりました</span></p>
+    <p class="lead wrap"><span>日頃お世話になっております皆様に</span><span>晴れの姿をお見せするとともに</span><span>ささやかな席を設けたく存じます</span></p>
+    <p class="lead wrap"><span>ご多用中 誠に恐縮ではございますが</span><span>ぜひご出席いただきたく</span><span>ご案内申し上げます</span></p>
+
+    <div class="lead-divider"></div>
+
+    <p class="lead ko wrap"><span>이 글이 닿는 오늘,</span> <span>그곳의 하루도 평안하시기를 바랍니다.</span></p>
+    <p class="lead ko wrap"><span>늘 저희를 아껴주신 소중한 분들을 모시고</span> <span>조촐한 예식을 올리려 합니다.</span></p>
+    <p class="lead ko wrap"><span>귀한 걸음 하시어</span> <span>따뜻한 축복 보내주시면 감사하겠습니다.</span></p>
+
+    <p class="sign"><small>2026년 9월</small>Geonhwi &amp; Eri</p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     ACCESS
+============================================================ -->
+<main class="view" data-view="access">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Access</p>
+      <p class="page__ja">アクセス</p>
+      <p class="page__ko">오시는 길</p>
+      <div class="rule"></div>
+    </div>
+
+    <div class="venue-block">
+      <p class="v-label">CEREMONY<span class="ko">예식장</span></p>
+      <p class="v-name">Hokkaido Jingu</p>
+      <p class="v-name-ja">北海道神宮</p>
+      <p class="v-name-ko">홋카이도 신궁</p>
+      <a class="v-map-link" href="https://maps.app.goo.gl/QVv7UhX4BdSP43KK9" target="_blank" rel="noopener">Google Mapで開く ↗</a>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=43.054333,141.3077928&z=16&output=embed" loading="lazy" title="北海道神宮の地図"></iframe>
+      </div>
+    </div>
+
+    <div class="venue-block">
+      <p class="v-label">RECEPTION<span class="ko">식사 회장</span></p>
+      <p class="v-name">Nouvelle Pousse Okurayama</p>
+      <p class="v-name-ja">ヌーベルプース大倉山</p>
+      <p class="v-name-ko">누벨 푸스 오쿠라야마</p>
+      <a class="v-map-link" href="https://maps.app.goo.gl/Q9XJGLJSuPCJ1nri9" target="_blank" rel="noopener">Google Mapで開く ↗</a>
+      <div class="map">
+        <iframe src="https://maps.google.com/maps?q=43.0520273,141.2902366&z=16&output=embed" loading="lazy" title="ヌーベルプース大倉山の地図"></iframe>
+      </div>
+    </div>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     SCHEDULE
+============================================================ -->
+<main class="view" data-view="schedule">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Schedule</p>
+      <p class="page__ja">スケジュール</p>
+      <p class="page__ko">일정 안내</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap" style="margin-bottom:38px"><span>2026年11月9日（月）</span></p>
+
+    <ul class="time-list">
+      <li><span class="t">14:30</span><span class="n">北海道神宮 集合<span class="ko">홋카이도 신궁 집합</span><small>社務所内 控室 ／ 사무소 내 대기실</small></span></li>
+      <li><span class="t">15:00</span><span class="n">挙式<span class="ko">예식</span></span></li>
+      <li><span class="t">15:30</span><span class="n">集合写真撮影<span class="ko">단체 사진 촬영</span></span></li>
+      <li><span class="t">16:00</span><span class="n">着替え・移動<span class="ko">환복 · 이동</span></span></li>
+      <li><span class="t">17:00</span><span class="n">食事会<span class="ko">식사회</span><small>ヌーベルプース大倉山 ／ 누벨 푸스 오쿠라야마</small></span></li>
+      <li><span class="t">19:30</span><span class="n">お開き<span class="ko">마무리</span></span></li>
+    </ul>
+
+    <p class="small-note wrap"><span>※ 時間は変更になる場合がございます</span><span>最新のご案内はこのページでお知らせします</span></p>
+    <p class="small-note ko wrap" style="margin-top:14px"><span>※ 시간은 변경될 수 있습니다.</span> <span>최신 안내는 이 페이지에서 알려드립니다.</span></p>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     CEREMONY PROGRAM
+============================================================ -->
+<main class="view" data-view="ceremony">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Ceremony<br>Program</p>
+      <p class="page__ja">式次第</p>
+      <p class="page__ko">신전식 순서</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap" style="margin-bottom:14px"><span>日本語はこちらをご覧ください</span></p>
+    <div style="text-align:center;margin-bottom:8px">
+      <a class="pdf-link" href="http://www.hokkaidojingu.or.jp/wedding/pdf/weddingmark.pdf" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+        結婚式のしおり（PDF）
+      </a>
+    </div>
+
+    <div class="kdoc">
+      <div class="k-band">GUIDE FOR OUR GUESTS<span class="kb-ko">홋카이도 신궁에서 부부의 인연을 맺으시는 여러분께</span></div>
+
+      <p class="k-intro">결혼식이란, 신의 인도하심으로 태어난 곳도 자란 환경도 다른 두 사람이 인연을 맺어, 서로 손을 맞잡고 기쁨과 슬픔을 함께 나누며 행복한 가정을 이루어 나가는 출발점입니다.</p>
+      <p class="k-intro">홋카이도 개척의 수호신을 모시는 홋카이도 신궁에서는 신전결혼식을 정성껏 받들어 올리고 있습니다. 결혼식은 인생의 여러 의례 가운데서도 특히 엄숙한 자리로, 신 앞에서 서로 언약을 나누고 새로운 삶에 신의 은혜와 가호를 기원하는 의식입니다.</p>
+      <p class="k-intro">혼인을 맺는다는 것은 두 분이 부부로 이어질 뿐만 아니라, 양가의 가족이 하나로 이어지는 일이기도 합니다. 그리고 자손 대대로 끊임없이 번영해 나갈 역사의 시작이 되는 것입니다.</p>
+
+      <div class="k-band">CEREMONY FLOW<span class="kb-ko">결혼식의 순서</span></div>
+      <p class="k-flow">신청 → 식순 설명 → 참진(입장) → 착석 → 수불 → 축사 봉독 → 가구라 → 서배의 의식 → 반지 교환 → 서사 봉독 → 다마구시 배례 → 친족 배례의 의식 → 재주 인사 → 퇴장<br>（대기실 → 본전 → 회랑 → 대기실）</p>
+
+      <div class="k-band" style="margin-bottom:14px">EACH STEP<span class="kb-ko">각 순서의 안내</span></div>
+
+      <details>
+        <summary>식순 설명</summary>
+        <div class="k-body"><p>미코(신을 모시는 여성)가 신랑 신부에게 식의 순서를 설명합니다. 대기실에서 결혼식의 진행 순서와 다마구시 배례의 예법을 안내합니다. 대기실에서는 양가의 친족이 마주 보고 앉아 서로 친족을 소개합니다.</p></div>
+      </details>
+      <details>
+        <summary>참진(입장 행렬)</summary>
+        <div class="k-body"><p>미코의 안내를 받으며 신랑 신부와 하객이 대기실에서 참배로(회랑)를 따라 본전으로 조용히 나아갑니다. 행렬은 신랑 신부를 선두로, 나코도(중매인)·가족·친족 순으로 가까운 사람부터 나아갑니다. 양가가 각각 한 줄로, 앉을 순서대로 늘어섭니다.</p></div>
+      </details>
+      <details>
+        <summary>수불 (부정을 씻는 의식)</summary>
+        <div class="k-body"><p>먼저 몸과 마음의 부정을 씻어 맑게 합니다. 미코의 신호에 따라 모두 일어섭니다. 신직이 불제 축문을 봉독한 뒤, 오누사(정화 도구)로 신랑 신부와 하객을 정화합니다. 하객은 모두 고개를 숙입니다.</p></div>
+      </details>
+      <details>
+        <summary>축사 봉독</summary>
+        <div class="k-body"><p>재주(예식을 주관하는 신직)가 축사를 봉독하여 큰 신께 두 분의 결혼을 아뢰고, 두 분의 새 가정이 오래도록 번영하기를 기원합니다. 이때에는 미코의 신호에 따라 모두 일어서서 고개를 숙입니다.</p></div>
+      </details>
+      <details>
+        <summary>가구라</summary>
+        <div class="k-body"><p>미코가 '식 가구라'라는 춤을 신께 올립니다.</p></div>
+      </details>
+      <details>
+        <summary>서배의 의식 (삼삼구도)</summary>
+        <div class="k-body"><p>언약의 잔에 신주를 나누어 마시며 부부의 영원한 사랑을 맹세합니다. 신랑이 먼저 세 겹의 금잔으로 신주를 마시고, 이어 신부도 같은 방식으로 마십니다. 이 과정을 세 번 반복하며, 잔마다 세 번에 나누어 마십니다.</p></div>
+      </details>
+      <details>
+        <summary>반지 교환</summary>
+        <div class="k-body"><p>결혼반지를 교환하며 영원한 사랑을 맹세합니다. (희망하시는 분에 한함) 먼저 신랑이 신부의 왼손 약지에 반지를 끼우고, 이어 신부가 신랑의 왼손 약지에 반지를 끼웁니다.</p><p class="k-note">※ 희망하시는 경우 예식 당일 식 전에 말씀해 주시고, 반지 케이스와 함께 미코에게 건네주시기 바랍니다.</p></div>
+      </details>
+      <details>
+        <summary>서사 봉독 (맹세의 말)</summary>
+        <div class="k-body"><p>신 앞에 나아가 한 번 절한 뒤, 두 분이 함께(또는 신랑이) 맹세문을 낭독합니다. 맹세문은 새 가정을 이루며 다지는 결의를 밝히는 것이므로, 차분하고 또렷한 목소리로 읽으시기 바랍니다. 낭독을 마치면 받침대 위에 올려놓습니다.</p></div>
+      </details>
+      <details>
+        <summary>다마구시 배례</summary>
+        <div class="k-body"><p>신랑 신부가 다마구시(신께 올리는 비쭈기나무 가지)를 바치고 절합니다. 밑동이 신전을 향하도록 바치고, '두 번 절하고 두 번 손뼉을 치고 한 번 절하는' 예법으로 절합니다. 이어 하객 대표와 나코도도 같은 방식으로 배례하며, 하객 일동은 일어서서 함께 배례합니다.</p></div>
+      </details>
+      <details>
+        <summary>친족 배례의 의식</summary>
+        <div class="k-body"><p>친족 모두가 신주를 나누어 마시며 친족의 연을 다집니다. 모두 일어서서 나코도(또는 미코)의 선창에 맞추어 건배합니다.</p></div>
+      </details>
+      <details>
+        <summary>재주 인사 · 퇴장</summary>
+        <div class="k-body"><p>재주가 축하의 말씀을 전합니다. 이어 미코의 안내에 따라, 입장 때와 마찬가지로 줄지어 본전에서 물러납니다.</p></div>
+      </details>
+
+      <div class="k-band" style="margin-bottom:14px">Q &amp; A<span class="kb-ko">결혼식 Q&amp;A</span></div>
+
+      <details>
+        <summary>부부의 언약으로 나누는 잔은 왜 세 번씩 마시나요?</summary>
+        <div class="k-body"><p>예로부터 음양설에서는 홀수를 경사스러운 수로 여깁니다. 하늘·땅·사람을 뜻하는 세 개의 잔으로 각각 세 번씩 나누어 마시며 언약을 맺기에 '삼헌의 의식'이라고도 합니다.</p></div>
+      </details>
+      <details>
+        <summary>다마구시에는 어떤 의미가 있나요?</summary>
+        <div class="k-body"><p>상록수인 비쭈기나무(사카키)에는 신이 깃든다고 여겨, 봉헌물을 달아 신께 바치던 풍습에서 비롯되었습니다. '옥'은 진실한 마음을 뜻하며, 이를 가지에 얹어 바치기에 '다마구시'라 합니다. 홋카이도에서는 사카키가 자라지 않아 '이치이 나무(옹코나무)' 가지를 사용합니다.</p></div>
+      </details>
+      <details>
+        <summary>신부의 시로무쿠와 쓰노카쿠시의 의미는?</summary>
+        <div class="k-body"><p>신부의 '쓰노카쿠시'와 '와타보시'는 신 앞에 나서기 위한 머리 장식으로, 신부에게 일생에 단 한 번뿐인 신성한 장식입니다. 시로무쿠 예복 역시 '청정'을 뜻하는 신사 의례의 복장입니다.</p></div>
+      </details>
+
+      <p class="k-note" style="text-align:center;margin-top:28px">홋카이도 신궁 봉찬회 사무국 · 011-611-0261</p>
+    </div>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     MENU
+============================================================ -->
+<main class="view" data-view="menu">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Menu</p>
+      <p class="page__ja">コース料理</p>
+      <p class="page__ko">코스요리 안내</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap" style="margin-bottom:10px"><span>参考メニュー</span></p>
+    <p class="lead ko" style="margin-bottom:34px;font-size:13px">참고 메뉴</p>
+
+    <ul class="menu-list">
+      <li><span class="c">AMUSE-BOUCHE</span><span class="d">クリームチーズのクルスティアン／帯広産長芋のベニエ／大豆スープ（予定）<span class="ko">크림치즈 크루스티앙 · 오비히로산 마 베니에 · 콩 수프(예정)</span></span></li>
+      <li><span class="c">ENTRÉE</span><span class="d">北海道産毛蟹と新玉葱のムースリーヌ<span class="ko">홋카이도산 털게와 햇양파 무슬린</span></span></li>
+      <li><span class="c">DEUXIÈME</span><span class="d">釧路沖帆立貝のポワレ あおさ海苔と旨味出汁のフラン<span class="ko">구시로 앞바다 가리비 푸알레 · 파래와 감칠맛 육수 플랑</span></span></li>
+      <li><span class="c">POISSON</span><span class="d">祝鯛のヴァプール ソースヴァンブラン<span class="ko">축하 도미 바푀르 · 뱅블랑 소스</span></span></li>
+      <li><span class="c">VIANDE</span><span class="d">白老産黒毛和牛の備長炭炭火焼き<span class="ko">시라오이산 흑모 와규 비장탄 숯불구이</span></span></li>
+      <li><span class="c">DESSERT</span><span class="d">ゴールデンパインとバジルのヴェリーヌ<span class="ko">골든 파인애플과 바질 베린</span></span></li>
+      <li><span class="c">CAFÉ / MIGNARDISES</span><span class="d">コーヒー／小菓子<span class="ko">커피 / 프티 푸르</span></span></li>
+    </ul>
+
+    <p class="menu-sub">FREE DRINK<span class="ko">무제한 음료</span></p>
+    <p class="drink-list">スパークリングワイン・瓶ビール・ワイン・ノンアルコールワイン<br>オレンジジュース・ウーロン茶・リンゴジュース
+      <span class="ko">스파클링 와인, 병맥주, 와인, 논알코올 와인,<br>오렌지 주스, 우롱차, 사과 주스</span>
+    </p>
+
+    <div class="allergy">
+      <p class="a-ja">
+        ※ 開催時期における天候・流通・仕入れにより内容は変更させていただきます<br>
+        <span class="ko-inline">※ 행사 시기의 날씨·유통·식자재 수급 상황에 따라 내용이 변경될 수 있습니다.</span><br><br>
+        <b>アレルギーがあるゲストに関して</b>
+        アレルギーがあるお客様でメニュー変更をご希望の場合は、以下内容をお知らせください。<br>
+        「食材その物のみ使用不可」<br>
+        「食材その物＋加工品迄使用不可」<br>
+        「食材その物＋加工品＋エキス迄使用不可」<br>
+        上記いずれに該当するかをお知らせ願います。<br>
+        ※ 但し使用不可食材によっては、他のお客様と内容・品数に相違あるメニューになる場合がございます
+      </p>
+      <p class="a-ko">
+        <b>알레르기가 있는 하객분들께</b>
+        알레르기가 있어 메뉴 변경을 원하시는 경우, 아래 내용을 알려 주시기 바랍니다.<br>
+        「해당 식재료 자체만 사용 불가」<br>
+        「해당 식재료 자체 + 가공품까지 사용 불가」<br>
+        「해당 식재료 자체 + 가공품 + 추출물(엑기스)까지 사용 불가」<br>
+        위 세 가지 중 어디에 해당하는지 알려 주시기 바랍니다.<br>
+        ※ 다만 사용 불가 식재료에 따라서는 다른 하객분들과 내용·요리 가짓수가 다른 메뉴로 제공될 수 있습니다.
+      </p>
+    </div>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<!-- ============================================================
+     PHOTO
+============================================================ -->
+<main class="view" data-view="photo">
+  <div class="page">
+    <a class="back" href="#/">← TOP</a>
+    <div class="page__head">
+      <p class="page__en">Photo</p>
+      <p class="page__ja">写真共有</p>
+      <p class="page__ko">사진공유</p>
+      <div class="rule"></div>
+    </div>
+
+    <p class="lead wrap"><span>当日撮っていただいた写真を</span><span>みんなで共有できるアルバムです</span></p>
+    <p class="lead ko wrap"><span>당일 촬영하신 사진을</span> <span>다 함께 나눌 수 있는 앨범입니다</span></p>
+
+    <div class="prep">
+      <p class="prep-ja">準備中</p>
+      <p class="prep-ko">준비 중입니다</p>
+    </div>
+  </div>
+  <footer class="foot"><p class="f-name">GEONHWI &amp; ERI</p><p class="f-date">2026.11.09</p></footer>
+</main>
+
+<script>
+(function () {
+  var views = document.querySelectorAll('[data-view]');
+  var titles = {
+    top: 'Geonhwi & Eri｜Wedding Invitation',
+    greetings: 'ご挨拶｜Geonhwi & Eri',
+    access: 'アクセス｜Geonhwi & Eri',
+    schedule: 'スケジュール｜Geonhwi & Eri',
+    ceremony: '式次第｜Geonhwi & Eri',
+    menu: 'コース料理｜Geonhwi & Eri',
+    photo: '写真共有｜Geonhwi & Eri'
+  };
+
+  function route() {
+    var id = (location.hash.replace('#/', '') || 'top');
+    var found = false;
+    views.forEach(function (v) {
+      var on = v.dataset.view === id;
+      v.classList.toggle('is-active', on);
+      if (on) found = true;
+    });
+    if (!found) {
+      document.querySelector('[data-view="top"]').classList.add('is-active');
+      id = 'top';
+    }
+    document.title = titles[id] || titles.top;
+    window.scrollTo(0, 0);
+    reveal();
+  }
+
+  function reveal() {
+    var items = document.querySelectorAll('.rv');
+    if (!('IntersectionObserver' in window)) {
+      items.forEach(function (el) { el.classList.add('in'); });
+      return;
+    }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e, i) {
+        if (e.isIntersecting) {
+          setTimeout(function () { e.target.classList.add('in'); }, i * 70);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    items.forEach(function (el) { if (!el.classList.contains('in')) io.observe(el); });
+  }
+
+  window.addEventListener('hashchange', route);
+  route();
+})();
+</script>
+</body>
+</html>
